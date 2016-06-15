@@ -1,25 +1,260 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainView-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="MainView" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="L7z-nO-PQL"/>
+                        <viewControllerLayoutGuide type="bottom" id="2gv-Bz-biQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZmG-7v-JHU">
+                                <rect key="frame" x="0.0" y="19" width="414" height="44"/>
+                                <color key="barTintColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Split your bill" id="FTI-Nd-MsX"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwr-ZT-hfN" userLabel="CameraButton">
+                                <rect key="frame" x="319" y="19" width="40" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="9Az-vX-4Il"/>
+                                    <constraint firstAttribute="height" constant="44" id="TOR-NU-Vnh"/>
+                                </constraints>
+                                <state key="normal" image="camera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CameraButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ngj-OZ-7OW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZs-zw-fh9">
+                                <rect key="frame" x="0.0" y="377" width="414" height="48"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.792156862745098" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="uh5-5S-1bp"/>
+                                </constraints>
+                                <state key="normal" title="SPLIT NOW">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SplitButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2h2-Yg-e1G"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Party Size" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="csA-Wm-ryR">
+                                <rect key="frame" x="221" y="147" width="138" height="37"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.88627450980392153" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="4Fo-XX-Orx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J42-2r-ImX" userLabel="CurrencyLabel">
+                                <rect key="frame" x="194" y="85" width="27" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zj-13-zrn">
+                                <rect key="frame" x="111" y="207" width="193" height="103"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.88627450980392153" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="TKR-yF-0hV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your bill" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2mu-Rk-tv7">
+                                <rect key="frame" x="221" y="88" width="138" height="37"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.88627450980392153" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Total Bill:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v2-h5-ZB3">
+                                <rect key="frame" x="16" y="88" width="114" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How many people?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR9-pd-5Ar">
+                                <rect key="frame" x="16" y="147" width="163" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9s-3L-I0c" userLabel="CurrencyLabel1">
+                                <rect key="frame" x="58" y="229" width="45" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Pmx-g5-5vr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR5-xp-DSX" userLabel="SettingsButton">
+                                <rect key="frame" x="367" y="23" width="41" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="RBK-DS-fot"/>
+                                    <constraint firstAttribute="width" constant="41" id="ywZ-uj-jGs"/>
+                                </constraints>
+                                <state key="normal" image="advanced">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SettingsButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rHc-Yd-Efc"/>
+                                    <segue destination="8Ca-b5-hJw" kind="presentation" identifier="GoToSettings" id="Flq-IK-vzX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Zj-13-zrn" firstAttribute="top" secondItem="J42-2r-ImX" secondAttribute="bottom" constant="80" id="5D0-UI-hnJ"/>
+                            <constraint firstAttribute="centerX" secondItem="RZs-zw-fh9" secondAttribute="centerX" id="DrE-4B-LCE"/>
+                            <constraint firstItem="3Zj-13-zrn" firstAttribute="leading" secondItem="b9s-3L-I0c" secondAttribute="trailing" constant="8" id="H3A-e1-DRh"/>
+                            <constraint firstAttribute="centerX" secondItem="csA-Wm-ryR" secondAttribute="centerX" constant="-83" id="IwX-Lm-iJ4"/>
+                            <constraint firstAttribute="centerX" secondItem="b9s-3L-I0c" secondAttribute="centerX" constant="126.5" id="Jel-xt-tFS"/>
+                            <constraint firstAttribute="centerX" secondItem="2mu-Rk-tv7" secondAttribute="centerX" constant="-83" id="Keb-MF-Tla"/>
+                            <constraint firstItem="RZs-zw-fh9" firstAttribute="top" secondItem="3Zj-13-zrn" secondAttribute="bottom" constant="67" id="MqD-fV-Vtd"/>
+                            <constraint firstAttribute="centerX" secondItem="xwr-ZT-hfN" secondAttribute="centerX" constant="-132" id="SdI-Wt-rYv"/>
+                            <constraint firstAttribute="centerX" secondItem="3Zj-13-zrn" secondAttribute="centerX" id="Vw2-K9-Re7"/>
+                            <constraint firstAttribute="centerX" secondItem="ZmG-7v-JHU" secondAttribute="centerX" id="XAh-Mf-I7d"/>
+                            <constraint firstItem="3Zj-13-zrn" firstAttribute="top" secondItem="ZmG-7v-JHU" secondAttribute="bottom" constant="144" id="Zvd-mC-2Yb"/>
+                            <constraint firstItem="RR5-xp-DSX" firstAttribute="leading" secondItem="xwr-ZT-hfN" secondAttribute="trailing" constant="-2" id="cax-49-JGS"/>
+                            <constraint firstAttribute="centerX" secondItem="J42-2r-ImX" secondAttribute="centerX" id="j4l-K5-6Cr"/>
+                            <constraint firstItem="RZs-zw-fh9" firstAttribute="top" secondItem="b9s-3L-I0c" secondAttribute="bottom" constant="88" id="qdO-Zk-UdI"/>
+                            <constraint firstItem="2mu-Rk-tv7" firstAttribute="leading" secondItem="J42-2r-ImX" secondAttribute="trailing" id="qxq-Hv-x2t"/>
+                            <constraint firstAttribute="centerX" secondItem="RR5-xp-DSX" secondAttribute="centerX" constant="-170.5" id="sd2-XT-2qn"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="KdU-Wn-v8b"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="736"/>
+                    <connections>
+                        <outlet property="AmountField" destination="2mu-Rk-tv7" id="3yT-j8-IR4"/>
+                        <outlet property="CameraButton" destination="xwr-ZT-hfN" id="YNo-6K-mKX"/>
+                        <outlet property="CurrencyLabel" destination="J42-2r-ImX" id="LV7-9J-Skw"/>
+                        <outlet property="CurrencyLabel1" destination="b9s-3L-I0c" id="qFi-8c-fQc"/>
+                        <outlet property="DisplayResults" destination="3Zj-13-zrn" id="YTS-SY-Lvc"/>
+                        <outlet property="PartyPeople" destination="csA-Wm-ryR" id="6X9-HO-JL5"/>
+                        <outlet property="SettingsButton" destination="RR5-xp-DSX" id="1xh-MD-c4h"/>
+                        <outlet property="SplitButton" destination="RZs-zw-fh9" id="k85-p0-GfE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="241" y="303"/>
+        </scene>
+        <!--SettingsView-->
+        <scene sceneID="urA-eP-biN">
+            <objects>
+                <viewController id="8Ca-b5-hJw" userLabel="SettingsView" customClass="SettingsView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nMv-wp-sVf"/>
+                        <viewControllerLayoutGuide type="bottom" id="sJF-WX-T8B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WfR-B7-Iay">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0H-Gv-U3i">
+                                <rect key="frame" x="16" y="127" width="128" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em8-9C-jnM" userLabel="CurrentCurrency">
+                                <rect key="frame" x="152" y="135" width="207" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Language:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfT-8h-Ock">
+                                <rect key="frame" x="16" y="191" width="134" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sak-dz-emV" userLabel="DefaultLanguage">
+                                <rect key="frame" x="203" y="196" width="156" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-rw-Zj5">
+                                <rect key="frame" x="223" y="251" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember History:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf7-Tx-18f">
+                                <rect key="frame" x="16" y="246" width="159" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-5s-kte" userLabel="CurrencyPicker">
+                                <rect key="frame" x="-10" y="497" width="375" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Ca-b5-hJw" id="eu8-wV-7OU"/>
+                                    <outlet property="delegate" destination="8Ca-b5-hJw" id="oLS-yW-wWs"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jy-nc-lwo" userLabel="SelectCurrencyButton">
+                                <rect key="frame" x="152" y="135" width="207" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.4542830100184993" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SelectCurrencyButton:" destination="8Ca-b5-hJw" eventType="touchUpInside" id="7sf-NG-LV8"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95Q-xV-Nqi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Settings" id="cf3-Nm-8zb">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="dDg-n7-Oq5">
+                                            <connections>
+                                                <action selector="GoToMain:" destination="8Ca-b5-hJw" id="xJn-Ky-dt8"/>
+                                                <segue destination="vXZ-lx-hvc" kind="presentation" identifier="GoToMain" id="dCV-tv-ww6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <connections>
+                                            <outlet property="leftBarButtonItem" destination="dDg-n7-Oq5" id="g21-0p-nfn"/>
+                                        </connections>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="CurrencyPicker" destination="n3e-5s-kte" id="Qub-Wl-uWo"/>
+                        <outlet property="CurrentCurrencyLabel" destination="em8-9C-jnM" id="kUl-bs-uMJ"/>
+                        <outlet property="DefaultLanguage" destination="sak-dz-emV" id="1GC-ys-5zM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mfH-Wt-C2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457.8125" y="303.69718309859155"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="advanced" width="64" height="64"/>
+        <image name="camera" width="256" height="256"/>
+    </resources>
 </document>
